@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+import { useProvider } from '@/stores';
+
+const provider = useProvider()
+</script>
 
 <template>
   <section scheme-container>
@@ -7,9 +12,7 @@
       Консультация с мастером
     </h2>
 
-    <div>
-      <span>6 мастеров онлайн</span>
-    </div>
+    <component__chat />
 
     <nav scheme-container>
       <p>
@@ -17,10 +20,10 @@
         Подберем лучшие решения с заботой о качестве.
       </p>
 
-      <button>
+      <button @click="provider.isModal = true">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 43 43" width="43">
           <circle cx="21.5" cy="21.25" r="21.25" fill="currentColor" />
-          <path fill="var(--color__text)"
+          <path fill="var(--color__scheme)"
             d="M28.613 21.613a.867.867 0 0 0 0-1.226l-5.52-5.52a.867.867 0 0 0-1.226 1.226L26.773 21l-4.906 4.907a.867.867 0 0 0 1.226 1.226l5.52-5.52ZM12 21v.867h16v-1.734H12V21Z" />
         </svg>
 
@@ -43,8 +46,9 @@ section {
     justify-content: space-between;
 
     button {
-      background-color: var(--color__text);
+      background-color: color-mix(in srgb, var(--color__text) 6%, transparent);
       border-radius: 999px;
+      backdrop-filter: blur(10px);
       display: flex;
       font-weight: 500;
       gap: 10px;
@@ -53,7 +57,16 @@ section {
       place-items: center;
       text-transform: uppercase;
       position: relative;
-      color: var(--color__scheme);
+      color: var(--color__text);
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1;
+      cursor: pointer;
+
+      &:hover {
+        background-color: color-mix(in srgb, var(--color__text) 10%, transparent);
+      }
     }
   }
 
@@ -64,38 +77,6 @@ section {
     span {
       display: block;
       font-size: 18px;
-    }
-  }
-
-  div {
-    max-width: 1560px;
-    margin: 60px auto;
-    position: relative;
-    background-color: color-mix(in srgb, #192d5d 84%, transparent);
-    border-radius: 25px;
-    min-height: 600px;
-    z-index: 1;
-    backdrop-filter: blur(40px);
-
-    span {
-      position: absolute;
-      right: 40px;
-      top: -40px;
-      padding: 20px 30px 20px 40px;
-      border-radius: 999px;
-      background-color: color-mix(in srgb, var(--color__scheme) 100%, transparent);
-      backdrop-filter: blur(20px);
-
-      &::before {
-        content: '';
-        background: color-mix(in srgb, var(--color__success) 100%, transparent);
-        width: 10px;
-        height: 10px;
-        position: absolute;
-        left: 20px;
-        border-radius: 999px;
-        bottom: 25px;
-      }
     }
   }
 }

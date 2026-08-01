@@ -45,7 +45,7 @@ registerComponents(sectionComponents, 'section')
 
 // Import yandex map API
 const map = createYmaps({
-  apikey: import.meta.env.VITE_YANDEX_KEY,
+  apikey: '13614fae-a5fb-45e4-872d-e75102b1debe',
 })
 
 instance.use(createPinia())

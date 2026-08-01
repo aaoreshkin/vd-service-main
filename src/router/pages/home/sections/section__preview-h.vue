@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 section {
-  background: url('/342d.png') no-repeat center;
+  background: url('/342d.avif') no-repeat center;
   background-size: contain;
   position: relative;
   padding: 450px var(--padding);

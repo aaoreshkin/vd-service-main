@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useProvider } from '@/stores'
+
+const provider = useProvider()
+</script>
 
 <template>
   <component__marquue />
@@ -7,11 +11,10 @@
     <div scheme-container>
       <article>
         <p>
-          <b>VD СЕРВИС —</b> это комплексный центр по обслуживанию и восстановлению премиальных
-          автомобилей в Москве.
+          <b>VD СЕРВИС —</b> это комплексный центр по обслуживанию и восстановлению премиальных автомобилей в Москве.
         </p>
 
-        <button>
+        <button @click="provider.isModal = true">
           <icon__arrow />
 
           Записаться
@@ -29,14 +32,14 @@
 
 <style lang="scss" scoped>
 section {
-  background: url('/shape_1.png') no-repeat right top;
+  background: url('/shape_1.avif') no-repeat right top;
   background-size: contain;
   height: 1020px;
   position: relative;
 
   &::before {
     content: '';
-    background: url('/preview__bg2.png') no-repeat center bottom;
+    background: url('/preview__bg2.avif') no-repeat center bottom;
     background-size: 2560px;
     position: absolute;
     inset: 0;
@@ -45,6 +48,7 @@ section {
   button {
     background-color: var(--color__scheme);
     border-radius: 999px;
+    cursor: pointer;
     display: flex;
     font:
       normal 400 20px / 1.6 'Oswald Variable',

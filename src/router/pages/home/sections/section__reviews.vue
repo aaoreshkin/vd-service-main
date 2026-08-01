@@ -9,9 +9,14 @@
       </article>
 
       <div class="reviews">
-        <iframe style="width: 100%; height: 100%; border: 1px solid #e6e6e6; box-sizing: border-box"
-          src="https://yandex.ru/maps-reviews-widget/16554355977?comments"></iframe><a
-          href="https://yandex.ru/maps/org/vd_servis/16554355977/" target="_blank" style="
+        <iframe
+          style="width: 100%; height: 100%; border: 1px solid #e6e6e6; box-sizing: border-box"
+          src="https://yandex.ru/maps-reviews-widget/16554355977?comments"
+        ></iframe
+        ><a
+          href="https://yandex.ru/maps/org/vd_servis/16554355977/"
+          target="_blank"
+          style="
             box-sizing: border-box;
             text-decoration: none;
             color: #b3b3b3;
@@ -32,7 +37,9 @@
             white-space: nowrap;
             padding: 0 16px;
             box-sizing: border-box;
-          ">ВД-Сервис на карте Москвы — Яндекс Карты</a>
+          "
+          >ВД-Сервис на карте Москвы — Яндекс Карты</a
+        >
       </div>
     </div>
   </section>
@@ -48,7 +55,7 @@
 }
 
 section {
-  background: url('/Ellipse 15.png') no-repeat center bottom;
+  background: url('/Ellipse 15.avif') no-repeat center bottom;
   background-size: cover;
   position: relative;
   padding: clamp(40px, 12vw, 250px) 0;

@@ -1,15 +1,49 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { LngLat } from '@yandex/ymaps3-types'
+import { ref } from 'vue'
+
+const markers: { coordinates: LngLat; phone: string; address: string }[] = [
+  {
+    coordinates: [37.504609, 55.791268],
+    phone: '+7 (495) 323-99-72',
+    address: 'г. Москва ул. Зорге, д. 25Б ст. 1',
+  },
+  {
+    coordinates: [37.61114, 55.787715],
+    phone: '+7 (495) 255-71-72',
+    address: 'г. Москва Октябрьский переулок, д. 23',
+  },
+  {
+    coordinates: [37.417985, 55.763589],
+    phone: '+7 (495) 255-71-72',
+    address: 'г. Москва ул. Крылатские Холмы, д. 24 к. 4',
+  },
+]
+
+const selectedMarkerIndex = ref<number | null>(null)
+
+const selectMarker = (index: number) => {
+  selectedMarkerIndex.value = index
+}
+</script>
 
 <template>
   <section scheme-container>
     <h2>Мы на <span>карте</span></h2>
     <p>Предоставляем широкий спектр услуг по защите и уходу за вашим автомобилем</p>
 
-    <div id="map"></div>
+    <component__map :markers v-model:selected-index="selectedMarkerIndex" />
+
 
     <ul>
-      <li class="active">г. Москва, ул. Зорге, д.25 б, ст.1</li>
-      <li>г. Москва, Октябрьский переулок, 23</li>
+      <li
+        v-for="(el, index) in markers"
+        :key="`${el.address}-${index}`"
+        :class="{ active: selectedMarkerIndex === index }"
+        @click="selectMarker(index)"
+      >
+        {{ el.address }}
+      </li>
     </ul>
   </section>
 </template>
@@ -21,14 +55,6 @@ section {
   gap: 20px;
   align-items: center;
   justify-content: space-between;
-
-  #map {
-    height: 500px;
-    width: 100%;
-    background-color: var(--color__scheme);
-    flex: 100%;
-    border-radius: 20px;
-  }
 
   span {
     color: var(--color__scheme);

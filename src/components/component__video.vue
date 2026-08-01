@@ -4,7 +4,7 @@ import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 const props = defineProps({
   videoSrc: {
     type: String,
-    default: '/0619.mov',
+    default: '/VD movie.m4v',
   },
 })
 
@@ -98,11 +98,22 @@ onBeforeUnmount(() => {
 
     <Teleport to="body">
       <Transition name="video-modal-fade">
-        <div v-if="isModalOpen" class="video-modal" role="dialog" aria-modal="true" aria-label="Видео о сервисе"
-          @click.self="closeModal">
+        <div
+          v-if="isModalOpen"
+          class="video-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Видео о сервисе"
+          @click.self="closeModal"
+        >
           <div class="video-modal__content">
-            <button class="video-modal__close" type="button" aria-label="Закрыть видео" @click="closeModal"
-              style="display: flex; z-index: 9;">
+            <button
+              class="video-modal__close"
+              type="button"
+              aria-label="Закрыть видео"
+              @click="closeModal"
+              style="display: flex; z-index: 9"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
 
@@ -129,7 +140,7 @@ onBeforeUnmount(() => {
 
   &::before {
     content: '';
-    background: url('/range-video.webp') no-repeat center;
+    background: url('/range-video.avif') no-repeat center;
     background-size: cover;
     border-radius: 25px;
     position: absolute;
@@ -178,8 +189,9 @@ onBeforeUnmount(() => {
   position: absolute;
   width: clamp(200px, 18.5vw, 250px);
   z-index: 1;
-  clip-path: path('M17.65 45.938C17.522 57.558 26.845 67 38.465 67H255.7c11.456 0 20.819-9.185 20.839-20.642.015-8.701-.054-16.606-.115-25.354C276.343 9.405 266.937 0 255.339 0H0c16.926 1.72 17.948 19.087 17.65 45.938Z'
-    );
+  clip-path: path(
+    'M17.65 45.938C17.522 57.558 26.845 67 38.465 67H255.7c11.456 0 20.819-9.185 20.839-20.642.015-8.701-.054-16.606-.115-25.354C276.343 9.405 266.937 0 255.339 0H0c16.926 1.72 17.948 19.087 17.65 45.938Z'
+  );
 }
 
 .video-modal {
