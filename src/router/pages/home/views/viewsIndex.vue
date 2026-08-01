@@ -6,10 +6,10 @@
   <section__about id="about" />
   <section__preview-h />
   <section__chat id="chat" />
-  <section__faq />
-  <section__reviews />
+  <section__faq id="faq" />
+  <section__reviews id="reviews" />
   <section__map id="contacts" />
-  <section__social />
+  <section__social id="social" />
   <section__subscribe />
 </template>
 

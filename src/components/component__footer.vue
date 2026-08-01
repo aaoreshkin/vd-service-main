@@ -1,4 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { articles } from '@/services'
+
+const sections = [
+  { hash: '#services', title: 'Услуги' },
+  { hash: '#chat', title: 'Задать вопрос мастеру' },
+  { hash: '#faq', title: 'Часто задаваемые вопросы' },
+  { hash: '#reviews', title: 'Отзывы' },
+  { hash: '#contacts', title: 'Контакты' },
+  { hash: '#social', title: 'Социальные сети' },
+]
+</script>
 
 <template>
   <footer>
@@ -6,31 +17,22 @@
       <icon__logo />
 
       <ul>
-        <li>Детейлинг</li>
-        <li>Полировка</li>
-        <li>Химчистка</li>
-        <li>Ремонт подвески</li>
-        <li>Замена масла</li>
-        <li>Сервисное обслуживание</li>
-        <li>Оклейка пленкой</li>
-        <li>Кузовной ремонт</li>
-        <li>Покраска</li>
+        <li v-for="el in articles" :key="el.slug">
+          <router-link :to="`/services/${el.slug}`">{{ el.title }}</router-link>
+        </li>
       </ul>
 
       <ul>
-        <li>Услуги</li>
-        <li>Задать вопрос мастеру</li>
-        <li>Часто задаваемые вопросы</li>
-        <li>Отзывы</li>
-        <li>Контакты</li>
-        <li>Социальные сети</li>
+        <li v-for="el in sections" :key="el.hash">
+          <router-link :to="{ path: '/', hash: el.hash }">{{ el.title }}</router-link>
+        </li>
       </ul>
 
       <ul>
         <li>Время работы: <strong>10:00-21:00</strong></li>
-        <li>+7 (495) 323-99-72</li>
+        <li><a href="tel:+74953239972">+7 (495) 323-99-72</a></li>
         <li>г. Москва, ул. Зорге, д.25 б, ст.1</li>
-        <li>+7 (495) 255-71-72</li>
+        <li><a href="tel:+74952557172">+7 (495) 255-71-72</a></li>
         <li>г. Москва, Октябрьский переулок, д.23</li>
       </ul>
 

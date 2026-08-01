@@ -5,17 +5,27 @@
   <header scheme-container>
     <nav>
       <ul>
-        <li v-scroll-to="'#services'">Услуги</li>
+        <li>
+          <router-link :to="{ path: '/', hash: '#services' }">Услуги</router-link>
+        </li>
 
-        <li v-scroll-to="'#about'">О компании</li>
+        <li>
+          <router-link :to="{ path: '/', hash: '#about' }">О компании</router-link>
+        </li>
 
-        <li v-scroll-to="'#chat'">Задать вопрос</li>
+        <li>
+          <router-link :to="{ path: '/', hash: '#chat' }">Задать вопрос</router-link>
+        </li>
       </ul>
 
-      <icon__logo v-scroll-to="'#app'" />
+      <router-link to="/" class="logo">
+        <icon__logo />
+      </router-link>
 
       <ul>
-        <li v-scroll-to="'#contacts'">Контакты</li>
+        <li>
+          <router-link :to="{ path: '/', hash: '#contacts' }">Контакты</router-link>
+        </li>
 
         <li>
           <a href="https://wa.me/74953239972?text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%21%20%D0%9D%D0%B0%D1%88%D0%B5%D0%BB%20%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B4%D0%B5%D1%82%D0%B5%D0%B9%D0%BB%D0%B8%D0%BD%D0%B3%D0%B0%21"
@@ -70,9 +80,13 @@ header {
       }
     }
 
+    .logo {
+      display: flex;
+      margin: auto;
+    }
+
     svg {
       cursor: pointer;
-      margin: auto;
 
       &:hover {
         color: var(--color__scheme);
@@ -98,7 +112,7 @@ header {
         }
       }
 
-      svg {
+      .logo {
         margin-left: 0;
       }
     }

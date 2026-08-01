@@ -14,7 +14,7 @@ const provider = useProvider()
           <b>VD СЕРВИС —</b> это комплексный центр по обслуживанию и восстановлению премиальных автомобилей в Москве.
         </p>
 
-        <button @click="provider.isModal = true">
+        <button @click="provider.open()">
           <icon__arrow />
 
           Записаться

@@ -11,7 +11,6 @@ const user = ref({
   id: uuid,
   phone: '',
   message: '',
-  description: 'Заявка с сайта'
 })
 
 if (!uuid) {
@@ -26,7 +25,7 @@ const send = async () => {
   const message = user.value.message
   try {
     const response = await fetch(
-      `https://xn--c1a3a.xn--b1aafeq0cfe.xn--p1ai/send?user_id=${user.value.id}&user_phone=%0A${`%2B` + user.value.phone.replace(/\+/g, '')}${user.value.message ? `&message=%0A${encodeURIComponent(message)}` : ''}&description=%0A${encodeURIComponent(user.value.description)}`,
+      `https://xn--c1a3a.xn--b1aafeq0cfe.xn--p1ai/send?user_id=${user.value.id}&user_phone=%0A${`%2B` + user.value.phone.replace(/\+/g, '')}${user.value.message ? `&message=%0A${encodeURIComponent(message)}` : ''}&description=%0A${encodeURIComponent(provider.subject)}`,
     )
     if (!response.ok) {
       throw new Error('Failed to send message')
@@ -38,7 +37,6 @@ const send = async () => {
       id: uuid,
       phone: '',
       message: '',
-      description: 'Заявка с сайта'
     }
   } catch (error) {
     console.log(error);

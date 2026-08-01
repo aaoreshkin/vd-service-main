@@ -1,27 +1,24 @@
 <script setup lang='ts'>
-interface Service {
-    id: number,
-    title: string,
-    description: string,
-    image: string
-}
+import type { Service } from '@/services'
+
 const props = defineProps<{
     service: Service
 }>()
 </script>
 
 <template>
-    <article :style="`background-image: url('${props.service.image}');`">
+    <router-link :to="`/services/${props.service.slug}`"
+        :style="`background-image: url('${props.service.image}');`">
         <div class="content">
             <span>0{{ props.service.id }}</span>
             <h4>{{ props.service.title }}</h4>
             <p>{{ props.service.description }}</p>
         </div>
-    </article>
+    </router-link>
 </template>
 
 <style scoped lang='scss'>
-article {
+a {
     align-items: center;
     background-position: 100% 100%;
     background-repeat: no-repeat;
@@ -42,7 +39,10 @@ article {
     &:nth-last-of-type(2),
     &:nth-last-of-type(4) {
         background-color: color-mix(in srgb, var(--color__text) 100%, transparent);
-        color: #111;
+
+        .content {
+            color: #111;
+        }
 
         p {
             color: #111;
@@ -53,7 +53,9 @@ article {
         }
     }
 
+    // цвет текста живёт на .content, иначе глобальное правило a:hover перекрашивает карточку
     .content {
+        color: var(--color__text);
         display: flex;
         flex-direction: column;
         gap: 10px;

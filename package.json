@@ -10,7 +10,7 @@
     "dev": "vite --mode production",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
-    "deploy": "vite build --mode production && sshpass -f ./rsync_pass rsync -avz --archive --compress --delete --exclude='*.mov' --exclude='*.MOV' --exclude='*.MP4' ./dist/* vdservice_ssh@vdservice.beget.tech:./vdservis.rf/public_html/"
+    "deploy": "vite build --mode production && sshpass -f ./rsync_pass rsync -avz --archive --compress --delete --exclude='*.mov' --exclude='*.MOV' --exclude='*.MP4' ./dist/ vdservice_ssh@vdservice.beget.tech:./vdservis.rf/public_html/"
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.2.6",
@@ -19,7 +19,6 @@
     "sass": "^1.90.0",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1",
-    "vue-scrollto": "^2.20.0",
     "vue-yandex-maps": "^2.1.9",
     "vue3-carousel": "^0.16.0",
     "vue3-marquee": "^4.2.2"

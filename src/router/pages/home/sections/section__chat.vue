@@ -20,7 +20,7 @@ const provider = useProvider()
         Подберем лучшие решения с заботой о качестве.
       </p>
 
-      <button @click="provider.isModal = true">
+      <button @click="provider.open('Заявка на диагностику')">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 43 43" width="43">
           <circle cx="21.5" cy="21.25" r="21.25" fill="currentColor" />
           <path fill="var(--color__scheme)"

@@ -4,7 +4,6 @@ import { createPinia } from 'pinia'
 import { router } from '@/router'
 
 import { createYmaps } from 'vue-yandex-maps'
-import VueScrollTo from 'vue-scrollto'
 
 import app from '@/app.vue'
 
@@ -51,6 +50,5 @@ const map = createYmaps({
 instance.use(createPinia())
 instance.use(router)
 instance.use(map)
-instance.use(VueScrollTo)
 
 instance.mount('body')
