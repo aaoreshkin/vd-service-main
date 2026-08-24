@@ -15,6 +15,7 @@ export interface Article {
   lead?: string
   blocks: Block[]
   cta?: string
+  photos?: string[]
 }
 
 export interface Service {
@@ -28,6 +29,7 @@ export interface Service {
 export const articles: Article[] = [
   {
     slug: 'detailing',
+    photos: ['/services/detailing-1.avif', '/services/detailing-2.avif'],
     title: 'Детейлинг',
     headline:
       'Профессиональный детейлинг автомобиля — глубокий уход, восстановление и защита кузова и салона',
@@ -88,6 +90,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'polirovka',
+    photos: ['/services/polirovka-1.avif', '/services/polirovka-2.avif'],
     title: 'Полировка автомобиля',
     metaDescription:
       'Полировка кузова автомобиля: удаление мелких царапин и паутинки, восстановление блеска лакокрасочного покрытия и нанесение защитного состава.',
@@ -147,6 +150,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'himchistka',
+    photos: ['/services/himchistka-1.avif', '/services/himchistka-2.avif'],
     title: 'Химчистка автомобилей',
     metaDescription:
       'Химчистка салона автомобиля: чистка сидений, потолка, ковролина и кожи, удаление стойких пятен и неприятных запахов с обработкой материалов.',
@@ -198,6 +202,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'remont-podveski',
+    photos: ['/services/remont-podveski-1.avif', '/services/remont-podveski-2.avif'],
     title: 'Ремонт подвески',
     metaDescription:
       'Ремонт подвески автомобиля: диагностика стуков и люфтов, замена амортизаторов, пружин и шаровых опор, регулировка углов установки колёс после ремонта.',
@@ -260,6 +265,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'zamena-masla',
+    photos: ['/services/zamena-masla-1.avif', '/services/zamena-masla-2.avif'],
     title: 'Замена масла',
     metaDescription:
       'Замена масла в двигателе и масляного фильтра: подбор масла по допускам производителя, проверка уровня остальных жидкостей и осмотр на подтёки.',
@@ -302,6 +308,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'planovoe-to',
+    photos: ['/services/planovoe-to-1.avif', '/services/planovoe-to-2.avif'],
     title: 'Плановое ТО',
     metaDescription:
       'Плановое техническое обслуживание автомобиля в Москве: замена масла и фильтров, осмотр тормозной системы, проверка жидкостей, свечей, ремней и шин.',
@@ -339,6 +346,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'okleyka-plenkoy',
+    photos: ['/services/okleyka-plenkoy-1.avif', '/services/okleyka-plenkoy-2.avif'],
     title: 'Оклейка автомобиля защитной пленкой',
     metaDescription:
       'Оклейка автомобиля защитной плёнкой: защита кузова от царапин, сколов и дорожных реагентов, антигравийная и полная оклейка, смена цвета без покраски.',
@@ -388,6 +396,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'kuzovnoy-remont',
+    photos: ['/services/kuzovnoy-remont-1.avif'],
     title: 'Кузовной ремонт',
     headline:
       'Кузовной ремонт автомобиля — восстановление внешнего вида и структурной целостности кузова',
@@ -474,6 +483,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'pokraska',
+    photos: ['/services/pokraska-1.avif', '/services/pokraska-2.avif'],
     title: 'Покраска',
     headline: 'Покраска автомобиля — локальный и полный перекрас с точным подбором цвета',
     metaDescription:
@@ -574,6 +584,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'shod-razval',
+    photos: ['/services/shod-razval-1.avif'],
     title: 'Сход-развал',
     metaDescription:
       'Сход-развал: регулировка углов установки колёс на стенде. Устраняет уход автомобиля в сторону, неравномерный износ шин и вялую реакцию на руль.',
@@ -632,6 +643,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'kompyuternaya-diagnostika',
+    photos: ['/services/kompyuternaya-diagnostika-1.avif'],
     title: 'Компьютерная диагностика',
     metaDescription:
       'Компьютерная диагностика автомобиля: подключение сканера к разъёму OBD-II, считывание кодов ошибок, анализ параметров систем и рекомендации по ремонту.',
@@ -675,6 +687,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'remont-elektroniki',
+    photos: ['/services/kompyuternaya-diagnostika-1.avif'],
     title: 'Ремонт электроники и блоков управления',
     metaDescription:
       'Ремонт автомобильной электроники и электронных блоков управления: диагностика ЭБУ, устранение неисправностей и проверка работоспособности систем.',
